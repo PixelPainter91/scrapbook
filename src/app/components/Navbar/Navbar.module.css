@@ -1,0 +1,215 @@
+.navbar {
+ position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+
+  padding: 0.75rem 1.25rem;
+  font-family: sans-serif;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.logo {
+  color: #000;
+  font-weight: bold;
+  margin: 0;
+}
+
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding-right: 2rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.navbar a,
+.navbar button {
+  color: #1f2937;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.navbar a:hover,
+.navbar button:hover {
+  background-color: #f5c103;
+  border-radius: 0.25rem;
+}
+
+.navItem {
+  position: relative;
+}
+
+.subMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #1f2937;
+  padding: 0.5rem 0;
+  list-style: none;
+  min-width: 150px;
+  border-radius: 0.25rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+  z-index: 1000;
+}
+
+.subMenuOpen {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.subMenu li a,
+.subMenu li button {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #f9fafb;
+}
+
+.subMenu li a:hover,
+.subMenu li button:hover {
+  background-color: #374151;
+}
+
+
+.navAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #f9fafb;
+  cursor: pointer;
+}
+
+
+.chatOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  opacity: 0;
+  animation: fadeIn 0.25s forwards;
+}
+
+.chatModal {
+  background-color: #fff;
+  width: 90%;
+  max-width: 420px;
+  padding: 1.25rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  transform: scale(0.95);
+  animation: scaleIn 0.25s forwards;
+}
+
+.chatModal h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.chatModal textarea {
+  width: 95%;
+  resize: none;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.chatActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.chatActions button {
+  padding: 0.4rem 0.9rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.cancel {
+  background-color: #9ca3af;
+  color: #fff;
+}
+
+.send {
+  background-color: #f5c103;
+  color: #fff;
+}
+
+.send:hover {
+  opacity: 0.9;
+}
+
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  to {
+    transform: scale(1);
+  }
+}
+
+
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .navItem {
+    width: 100%;
+  }
+
+  .navItem a,
+  .navItem button {
+    width: 100%;
+    text-align: left;
+  }
+
+  .subMenu {
+    position: relative;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+  }
+
+  .navAvatar {
+    margin-top: 0.5rem;
+    align-self: flex-start;
+  }
+}
