@@ -10,7 +10,7 @@ export default function HomePage() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center gap-6 bg-linear-to-br from-yellow-50 to-white">
       <h1 className="text-5xl font-extrabold tracking-tight">
-        📒 Scrapbook
+        Scrapbook
       </h1>
 
       <SignedOut>

@@ -55,10 +55,10 @@ export default function Homepage() {
       </p>
 
       <Link
-        href="/pages/chat"
+        href="/mypage"
         className="inline-block px-6 py-3 bg-yellow-400/80 hover:bg-yellow-500 text-black font-semibold rounded-lg shadow-lg transform transition hover:-translate-y-1 hover:scale-105"
       >
-        Explore Posts
+        Create Your Page!
       </Link>
     </div>
   </motion.div>

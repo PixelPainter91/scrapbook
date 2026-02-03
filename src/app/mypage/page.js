@@ -2,7 +2,7 @@
 
 import { useUser } from "@clerk/nextjs";
 import { useState, useEffect } from "react";
-import Image from "next/image";
+// import Image from "next/image";
 import styles from "./mypage.module.css";
 
 export default function MyPageEditor() {
@@ -199,14 +199,14 @@ export default function MyPageEditor() {
             className={styles.draggableWrapper}
             style={{ left: img.x, top: img.y, width: img.width, height: img.height }}
           >
-            <Image
-              src={img.url}
-              alt="User uploaded"
-              width={img.width}
-              height={img.height}
-              style={{ objectFit: "cover" }}
-              onMouseDown={() => startImageDrag(idx)}
-            />
+            <img
+  src={img.url}
+  alt="User uploaded"
+  width={img.width}
+  height={img.height}
+  style={{ objectFit: "cover", width: '100%', height: '100%' }}
+  onMouseDown={() => startImageDrag(idx)}
+/>
             <div className={styles.resizeHandle} onMouseDown={(e) => startResize(idx, e)} />
             <button className={styles.deleteBtn} onClick={() => deleteImage(idx)}>×</button>
           </div>
