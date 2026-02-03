@@ -2,8 +2,8 @@ import { SignIn } from "@clerk/nextjs";
 
 export default function SignInPage() {
   return (
-    <main className="flex min-h-screen items-center justify-center">
-      <SignIn />
-    </main>
+    <div style={{ padding: 40 }}>
+      <SignIn routing="path" path="/sign-in" />
+    </div>
   );
 }

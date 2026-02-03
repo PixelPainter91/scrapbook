@@ -1,5 +1,5 @@
 "use client";
-import Navbar from "@/app/components/Navbar/Navbar";
+
 import Link from "next/link";
 import { motion } from "framer-motion";
 
@@ -33,10 +33,7 @@ export default function Homepage() {
     }}
   />
 
-  
-  {/* <div className="relative z-10">
-    <Navbar />
-  </div> */}
+ 
 
   
   <div className="relative z-10 h-screen flex items-center px-6 md:px-16">

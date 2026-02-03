@@ -1,0 +1,137 @@
+.mypageContainer {
+  padding-top: 90px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-image: url('https://images.unsplash.com/photo-1506968430777-bf7784a87f23?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: #f9f9f9;
+}
+
+.controls {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.controls input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  min-width: 180px;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+.controls button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 6px;
+  border: none;
+  background-color: #f5c103;
+  color: black;
+}
+
+.controls button:hover {
+  opacity: 0.9;
+}
+
+.workspace {
+  position: relative;
+  width: 100%;
+  min-height: 600px;
+  border: 2px dashed #bbb;
+  background-color: #f9f9f9;
+  overflow: hidden;
+}
+
+.draggableWrapper {
+  position: absolute;
+}
+
+.draggableWrapper img {
+  cursor: grab;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.draggableWrapper img:active {
+  cursor: grabbing;
+}
+
+.resizeHandle {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  bottom: 0;
+  right: 0;
+  background-color: #61bd81;
+  border-radius: 3px;
+  cursor: se-resize;
+  z-index: 10;
+}
+
+.textBox {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 4px 6px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  cursor: grab;
+  max-width: 250px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+}
+
+.textBox textarea {
+  width: 100%;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 1.3;
+  background: transparent;
+  border: none;
+  outline: none;
+  resize: none;
+}
+
+.textBox:active {
+  cursor: grabbing;
+}
+
+.deleteBtn {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  border: none;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  font-size: 14px;
+  line-height: 22px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.deleteBtn:hover {
+  background-color: #e63946;
+  color: white;
+}
+
+@media (max-width: 600px) {
+  .controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .controls input,
+  .controls button {
+    width: 100%;
+  }
+}
